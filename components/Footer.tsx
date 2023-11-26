@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className='py-4 px-8 flex justify-between items-center gap-2 flex-wrap bg-[#161921] sm:px-16'>
       <p className='text-base font-bold text-white'>@{year} Epic Anime Infinite List</p>
       <Image 
-        src={"./logo.svg"}
+        src={"/logo.png"}
         alt='logo footer'
         width={50}
         height={45}

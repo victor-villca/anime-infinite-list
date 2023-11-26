@@ -6,15 +6,15 @@ const Navbar = () => {
     <header className='bg-hero bg-center bg-cover bg-no-repeat sm:p-16 py-16 px-8 flex justify-center lg:items-center max-lg:flex-col w-full sm:gap-16 gap-0'>
         <div className='flex-1 flex flex-col gap-10'>
             <Image 
-                src={"./logo.svg"}
+                src={"/logo.png"}
                 alt='logo'
-                width={100}
-                height={95}
+                width={150}
+                height={120}
                 className='object-contain'
             />
             <h1 className='text-5xl text-white font-bold leading-[120%] sm:text-6xl lg:max-w-lg'>
                 Explore The 
-                <span className='red-gradient'>Diverse Realms</span>
+                <span className='red-gradient'>&nbsp;Most Popular&nbsp;</span>
                 of Anime Magic
             </h1>
         </div>

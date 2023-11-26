@@ -2,8 +2,14 @@ import Image from 'next/image';
 import React from 'react'
 import { GrChannel } from "react-icons/gr";
 import { FaStar } from "react-icons/fa";
+import { MotionDiv } from './DivMotion';
 
+const stagger = 0.25;
 
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 export interface AnimeProp {
     id: string;
@@ -23,9 +29,19 @@ interface Prop {
   }
   
 
-const AnimeCard = ({ anime} : Prop) => {
+const AnimeCard = ({ anime, index} : Prop) => {
   return (
-    <div className='max-w-sm rounded-xl relative w-full'>
+    <MotionDiv className='max-w-sm rounded-xl relative w-full'
+    variants={variants}
+    initial="hidden"
+    animate="visible"
+    transition={{
+      delay: index * stagger,
+      ease: "easeInOut",
+      duration: 0.5,
+    }}
+    viewport={{ amount: 0 }}
+    >
         <div className='relative w-full h-[37vh] object-cover rounded-xl'>
             <Image 
                 src={`https://shikimori.one${anime.image.original}`}
@@ -60,7 +76,7 @@ const AnimeCard = ({ anime} : Prop) => {
                 </div>
             </div>
         </div>
-    </div>
+    </MotionDiv>
   )
 }
 
